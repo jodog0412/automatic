@@ -14,7 +14,8 @@ from rich import progress # pylint: disable=redefined-builtin
 import torch
 import safetensors.torch
 from omegaconf import OmegaConf
-from ldm.util import instantiate_from_config
+
+from modules.ldm_util import instantiate_from_config
 from modules import paths, shared, shared_state, modelloader, devices, script_callbacks, sd_vae, sd_unet, errors, sd_models_config, sd_models_compile, sd_hijack_accelerate, sd_detect
 from modules.timer import Timer
 from modules.memstats import memory_stats

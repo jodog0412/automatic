@@ -147,7 +147,7 @@ def load_flux_gguf(file_path):
     from modules import ggml, sd_hijack_accelerate
     with init_empty_weights():
         from diffusers import FluxTransformer2DModel
-        config = FluxTransformer2DModel.load_config(os.path.join('configs', 'flux'), subfolder="transformer")
+        config = FluxTransformer2DModel.load_config('models/transformer_config.json', subfolder="transformer")
         transformer = FluxTransformer2DModel.from_config(config).to(devices.dtype)
         expected_state_dict_keys = list(transformer.state_dict().keys())
     state_dict, stats = ggml.load_gguf_state_dict(file_path, devices.dtype)
